@@ -2,7 +2,8 @@ import Login from '../mocks/factories/Login'
 const mail = '[name="username"]'
 const password = '[name="password"]'
 const btn = '[type="submit"]'
-
+const msgSuccess = '.page-title'
+const msgFalid = 'font > label'
 let login = Login.loginData();
 
 class User {
@@ -14,7 +15,19 @@ class User {
         cy.get(mail).type(login.mail)
         cy.get(password).type(login.password)
         cy.get(btn).click()
+        cy.get(msgSuccess).should('be.visible')
+    }
+
+    loginInvalid() {
+        let loginMail = 'teste@teste'
+        cy.get(mail).type(loginMail)
+        cy.get(password).type(login.password)
+        cy.get(btn).click()
+        cy.get(msgFalid).should('be.visible')
     }
 }
 
 export default { User };
+
+
+				
