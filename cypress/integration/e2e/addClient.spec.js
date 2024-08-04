@@ -1,9 +1,9 @@
-import {addClient} from "../../pages/Client";
+import {Clients} from "../../pages/Client";
 import {User} from '../../pages/Login'
 
 describe('Client test', () => {
     const user = new User();
-    const client = new addClient();
+    const client = new Clients();
     beforeEach(() => {
         user.go()
         user.login()

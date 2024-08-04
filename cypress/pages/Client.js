@@ -9,10 +9,20 @@ const msgSuccess = 'strong'
 const msgFailName = '[data-bv-for="nome"]'
 const msgFailCpf = '[data-bv-for="cpf"]'
 const btnCanceled = '[class="btn btn-danger"]'
+const btnFind = '[value="Pesquisar"]'
+const fieldName = '[name="j_idt17"]'
+const tableName = '.success > :nth-child(1)'
+const btnClearDataBase = '[name="j_idt22"]'
+const msgDataBaseClear = '#alertMessage > strong'
 
-class addClient {
+class Clients {
     go(){
         cy.visit('/incluirCliente')
+    }
+
+    goListClient(){
+        cy.visit('/listarCliente')
+        cy.get(btnFind).click()
     }
 
     createClient() {
@@ -48,4 +58,17 @@ class addClient {
         cy.get(btnCanceled).click()
         cy.get(':nth-child(2) > .col > strong').should('be.visible')
     }
-}export default { addClient }
+
+    findNameClient(){
+        cy.get(fieldName)
+            .click()    
+            .type(client.name)
+        cy.get(btnFind).click()
+        cy.get(tableName).should('contain.text', client.name)
+    }
+
+    clearDataBase(){
+        cy.get(btnClearDataBase).click()
+        cy.get(msgDataBaseClear).should('be.visible')
+    }
+}export default { Clients }
