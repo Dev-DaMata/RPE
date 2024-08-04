@@ -17,4 +17,9 @@ class Transactions {
         cy.get(balance).type(transaction.balance)
         cy.get(btnSave).click()
     }
+
+    createUnnamedTransaction() {
+        cy.get(balance).type(transaction.balance)
+        cy.get(btnSave).click()
+    }
 }export default {Transactions}

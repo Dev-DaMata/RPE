@@ -17,4 +17,8 @@ describe('Test add Transaction', () => {
     it('Should create a transaction', ()=>{
         transaction.createTransaction()
     })
+
+    it('Should not create a transation without the costumers name', () => {
+        transaction.createUnnamedTransaction()
+    })
 })
