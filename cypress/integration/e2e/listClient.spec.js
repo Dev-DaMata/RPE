@@ -10,15 +10,18 @@ describe('Test listClient', () => {
         user.login()
         client.go()
         client.createClient()
+        client.goListClient()
     });
 
     it('Should filter by client name',()=>{
-        client.goListClient()
         client.findNameClient()
     })
 
-    it.only('Should clean the database', () =>{
-        client.goListClient()
+    it('Should clean the database', () =>{
         client.clearDataBase()
+    })
+
+    it('Should see customer breakdown', () => {
+        client.seeDetail()
     })
 })

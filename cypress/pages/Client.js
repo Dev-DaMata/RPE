@@ -14,6 +14,7 @@ const fieldName = '[name="j_idt17"]'
 const tableName = '.success > :nth-child(1)'
 const btnClearDataBase = '[name="j_idt22"]'
 const msgDataBaseClear = '#alertMessage > strong'
+const btnSeeDetail = ':nth-child(1) > .text-center > .btn-primary'
 
 class Clients {
     go(){
@@ -71,4 +72,10 @@ class Clients {
         cy.get(btnClearDataBase).click()
         cy.get(msgDataBaseClear).should('be.visible')
     }
+
+    seeDetail(){
+        cy.get(btnSeeDetail).click()
+        cy.get('.btn-success').should('be.visible')
+    }
+
 }export default { Clients }
