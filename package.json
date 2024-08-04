@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Guilherme Cordeir da Mata",
+  "author": "Guilherme Cordeiro da Mata",
   "license": "ISC",
   "devDependencies": {
     "@faker-js/faker": "^8.4.1",

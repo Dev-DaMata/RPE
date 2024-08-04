@@ -22,11 +22,12 @@ describe('Test add Transaction', () => {
         transaction.createUnnamedTransaction()
     })
 
+    it('When canceling a transaction you should be redirected to the listing page', ()=> {
+        transaction.canceledTransation()
+    })
+
     it.skip('should not create a transaction with a value greater than the balance', ()=>{
         //Aguardando o time de dev corrigir essa funcionalidade
     })
 
-    it.only('When canceling a transaction you should be redirected to the listing page', ()=> {
-        transaction.canceledTransation()
-    })
 })
