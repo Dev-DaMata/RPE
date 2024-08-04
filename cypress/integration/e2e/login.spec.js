@@ -1,6 +1,6 @@
 import {User} from '../../pages/Login'
 
-describe('Test', () => { 
+describe('Login test', () => { 
     const user = new User();
 
     it('Should log in',()=>{
