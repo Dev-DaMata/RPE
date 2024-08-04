@@ -8,6 +8,7 @@ const btnSave = '[id="botaoSalvar"]'
 const msgSuccess = 'strong'
 const msgFailName = '[data-bv-for="nome"]'
 const msgFailCpf = '[data-bv-for="cpf"]'
+const btnCanceled = '[class="btn btn-danger"]'
 
 class addClient {
     go(){
@@ -37,5 +38,14 @@ class addClient {
         cy.get(balance).type(client.balance)
         cy.get(btnSave).click()
         cy.get(msgFailCpf).should('be.visible')
+    }
+
+    clientCanceled(){
+        cy.get(name).type(client.name)
+        cy.get(cpf).type(client.cpf)
+        cy.get(active).select('Ativo')
+        cy.get(balance).type(client.balance)
+        cy.get(btnCanceled).click()
+        cy.get(':nth-child(2) > .col > strong').should('be.visible')
     }
 }export default { addClient }

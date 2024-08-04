@@ -23,4 +23,9 @@ describe('Client test', () => {
         client.go()
         client.createClietNoCpf()
     })
+
+    it('When the customer is canceled, they must be redirected to the user listing page', () => {
+        client.go()
+        client.clientCanceled()
+    })
 })
